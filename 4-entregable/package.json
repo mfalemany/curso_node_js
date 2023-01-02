@@ -1,0 +1,14 @@
+{
+  "name": "4-entregable",
+  "version": "1.0.0",
+  "description": "Entregable de FileSystem",
+  "main": "ProductManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Federico Alemany",
+  "license": "ISC",
+  "dependencies": {
+    "filesystem": "^1.0.1"
+  }
+}

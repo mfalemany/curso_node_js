@@ -1,0 +1,110 @@
+[
+    {
+        "title": "TV Samsung 32\"",
+        "description": "El mejor TV del mercado",
+        "price": "35000",
+        "thumbnail": "",
+        "code": "TV-1",
+        "stock": 10,
+        "id": 0
+    },
+    {
+        "title": "Tablet Noblex",
+        "description": "Tablet para uso doméstico",
+        "price": "23000",
+        "thumbnail": "",
+        "code": "TB-1",
+        "stock": 5,
+        "id": 1
+    },
+    {
+        "title": "Mouse inalambrico",
+        "description": "Mouse azul sin cables",
+        "price": "2000",
+        "thumbnail": "",
+        "code": "MO-1",
+        "stock": 30,
+        "id": 2
+    },
+    {
+        "title": "Lector USB",
+        "description": "Ideal para transmitir música!",
+        "price": "1000",
+        "thumbnail": "",
+        "code": "US-1",
+        "stock": 55,
+        "id": 3
+    },
+    {
+        "title": "Teclado retroiluminado",
+        "description": "Ideal para gaming",
+        "price": "2780",
+        "thumbnail": "",
+        "code": "KB-1",
+        "stock": 10,
+        "id": 4
+    },
+    {
+        "title": "Base refrigerante para Notebook",
+        "description": "Refrigera la base de la notebook",
+        "price": "23000",
+        "thumbnail": "",
+        "code": "AC-1",
+        "stock": 5,
+        "id": 5
+    },
+    {
+        "title": "Cable HDMI x 1mtr",
+        "description": "Cable para conexión de video",
+        "price": "2800",
+        "thumbnail": "",
+        "code": "AC-2",
+        "stock": 32,
+        "id": 6
+    },
+    {
+        "title": "Pendrive 16Gb",
+        "description": "Llevá toda tu info con vos",
+        "price": "1230",
+        "thumbnail": "",
+        "code": "US-3",
+        "stock": 12,
+        "id": 7
+    },
+    {
+        "title": "Monitor Samsung",
+        "description": "El mejor TV del mercado (de otro mercado)",
+        "price": "35100",
+        "thumbnail": "",
+        "code": "TV-2",
+        "stock": 11,
+        "id": 8
+    },
+    {
+        "title": "Auricular Noblex",
+        "description": "Ideal para videollamadas",
+        "price": "2300",
+        "thumbnail": "",
+        "code": "AU-11",
+        "stock": 1,
+        "id": 9
+    },
+    {
+        "title": "Notebook LG",
+        "description": "Notebook Gamer",
+        "price": "201100",
+        "thumbnail": "",
+        "code": "NO-21",
+        "stock": 2,
+        "id": 10
+    },
+    {
+        "title": "Pendrive 32Gb",
+        "description": "Toda la info en un solo lugar",
+        "price": "10020",
+        "thumbnail": "",
+        "code": "US-12",
+        "stock": 32,
+        "id": 11
+    }
+]

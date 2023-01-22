@@ -1,0 +1,29 @@
+<form id="alta_producto">
+	<div class="campo">
+		<label for="title">Título:</label> <input type="text" name="title" id="title">
+	</div>
+	<div class="campo">
+		<label for="title">Descripción:</label> <input type="text" name="description" id="description">
+	</div>
+	<div class="campo">
+		<label for="title">Code:</label><input type="text" name="code" id="code">
+	</div>
+	<div class="campo">
+		<label for="title">Price:</label> <input type="text" name="price" id="price">
+	</div>
+	<div>
+		<input type="submit" id="btn_guardar_producto" value="Guardar producto">
+	</div>
+</form>
+
+<table id="productosActuales" border=1>
+	<tr>
+		<th>Título</th>
+		<th>Descripción</th>
+		<th>Código</th>
+		<th>Precio</th>
+	</tr>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

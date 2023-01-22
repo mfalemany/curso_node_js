@@ -1,0 +1,41 @@
+#alta_producto {
+	width: 500px;
+}
+
+#alta_producto .campo{
+	margin-bottom: 10px;
+}
+#alta_producto .campo label{
+	display: inline-block;
+	width: 90px;
+}
+#alta_producto input[type="submit"]{
+	background-color: #8585c9;
+	color: #FFF;
+	float: right;
+	padding: 10px;
+}
+
+#alta_producto input[type="text"]{
+	width: 300px;
+}
+
+#productosActuales {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	margin-top: 100px;
+	width: 900px;
+
+}
+#productosActuales tr th{
+	background-color: #8585c9;
+	color: #FFF;
+}
+
+#productosActuales tr:nth-child(odd){
+	background-color: #eaeaff;
+}
+
+#productosActuales tr td{
+	padding: 3px 10px;
+}

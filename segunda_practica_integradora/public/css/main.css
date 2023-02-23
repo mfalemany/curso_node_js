@@ -1,0 +1,27 @@
+#productos-contenedor table{
+	border-collapse: collapse;
+	margin: 10px auto;
+	width: 80%;
+
+}
+
+#productos-contenedor table th{
+	background-color: #3a588f;
+	color: white;
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding: 5px 0px;
+	text-align: center;
+}
+
+#productos-contenedor table tr td:nth-child(n+4){
+	text-align: center;
+}
+
+#productos-contenedor table tr td{
+	padding: 3px 0px 3px 10px;
+}
+
+#productos-contenedor table tr td, #productos-contenedor table th {
+border: 1px solid gray;
+}

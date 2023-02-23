@@ -3,7 +3,9 @@ const app                = express();
 const handlebars         = require('express-handlebars');
 const { socketServer }   = require('./SocketServer');
 const { viewsRouter }    = require('./routers/viewsRouter');
-
+const { userRouter }     = require('./routers/userRouter');
+const { productsRouter } = require('./routers/productsRouter');
+const { messagesRouter } = require('./routers/messagesRouter');
 const PORT               = 8080;
 
 /* Obtengo una instancia del server de Express*/
@@ -25,14 +27,12 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 /* Gestor de rutas/vistas */
-app.use('/', viewsRouter);
+app.use('/api/', viewsRouter);
+app.use('/api/users', userRouter);
+app.use('/api/products', productsRouter);
+app.use('/api/messages', messagesRouter);
 
 /* Por si las moscas */
 app.get('*', (req,res) => {
 	res.send('Ups, no encontramos lo que buscas');
 })
-
-
-
-
-

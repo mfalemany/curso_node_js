@@ -1,0 +1,52 @@
+<div>
+	<fieldset>
+		<legend>Ordenar por precio</legend>
+		<a href="?sort=asc&limit={{limit}}&page={{productos.page}}">Mas bajo primero</a> |
+		<a href="?sort=desc&limit={{limit}}&page={{productos.page}}">Mas alto primero</a>
+	</fieldset>
+	<fieldset>
+		<legend>Limitar resultados</legend>
+		<a href="?limit=2&page={{productos.page}}">2</a> | 
+		<a href="?limit=5&page={{productos.page}}">5</a> | 
+		<a href="?limit=7&page={{productos.page}}">7</a> | 
+		<a href="?limit=10&page={{productos.page}}">10</a>
+	</fieldset>
+</div>
+<div id="productos-contenedor">
+	<table>
+		<thead>
+			<th>Título</th>
+			<th>Descripción</th>
+			<th>Código</th>
+			<th>Precio</th>
+			<th>Status</th>
+			<th>Stock</th>
+			<th>Acciones</th>
+		</thead>
+		<tbody>
+			{{#each productos.docs}}
+				<tr>
+					<td>{{this.title}}</td>
+					<td>{{this.description}}</td>
+					<td>{{this.code}}</td>
+					<td>${{this.price}}</td>
+					<td>{{this.status}}</td>
+					<td>{{this.stock}} unidades</td>
+					<td><input type="button" class="addToCart" id="{{this.id}}" value="Agregar al carrito"></td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<div>
+		{{#if productos.hasPrevPage}}
+			<a href="?limit={{limit}}&page={{productos.prevPage}}">Anterior</a>
+		{{/if}}
+		&nbsp;
+		{{#if productos.hasNextPage}}
+			<a href="?limit={{limit}}&page={{productos.nextPage}}">Siguiente</a>
+		{{/if}}
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/index.js"></script>
+

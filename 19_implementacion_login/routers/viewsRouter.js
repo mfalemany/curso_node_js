@@ -12,14 +12,12 @@ viewsRouter.get('/register', (req, res) => {
 	}
 });
 
-viewsRouter.get('/', (req, res) => {
-	if (req.session?.user) {
-		res.render('login');
-	}
+viewsRouter.get('/login', (req, res) => {
+	res.render('usuarios/login');
 });
 
 // Vista Productos
-viewsRouter.get('/products', async (req, res) => {
+viewsRouter.get('/products', auth, async (req, res) => {
 	console.log(req.query);
 	const limit = req.query.limit || 10;
 	const page  = req.query.page || 1;
@@ -50,6 +48,14 @@ function construirQuery(query) {
 		}
 	});
 	return appliedFilters;
+}
+
+function auth(req, res, next) {
+	if (req.session.user) {
+		return next();
+	}
+
+	res.redirect('/login');
 }
 
 module.exports.viewsRouter = viewsRouter;

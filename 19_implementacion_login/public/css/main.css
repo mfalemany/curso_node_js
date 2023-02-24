@@ -1,3 +1,17 @@
+nav {
+	background: rgb(2,0,36);
+	background: linear-gradient(0deg, rgb(13 64 141) 0%, rgba(63,114,204,1) 51%, #607d8b 100%);
+	box-sizing: border-box;
+	color: #FFF;
+	padding: 7px 10px;
+	text-align: right;
+}
+nav a{
+	color: inherit;
+	cursor: pointer;
+	font-weight: bold;
+	text-decoration: none;
+}
 #productos-contenedor table{
 	border-collapse: collapse;
 	margin: 10px auto;

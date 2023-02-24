@@ -1,17 +1,61 @@
 /* ========= Register de usuarios ========= */
+const handleBotonRegister = $boton => {
+	$boton.addEventListener('click', async (event) => {
+		event.preventDefault();
+		event.target.setAttribute('disabled', 'disabled');
+
+		const formData = getFormData(['first_name', 'last_name', 'email', 'age', 'password']);
+		
+		const resultado = await doFetch('http://localhost:8080/api/sessions/register', 'post', false, formData);
+		
+		if (resultado.success) {
+			setMensajeGlobal(resultado.message + ' - Redirigiendo al login...', 'info');
+			setTimeout(() => {
+				window.location.href = '/login';
+			},3000);
+		} else {
+			setMensajeGlobal(resultado.message, 'error');
+			event.target.removeAttribute('disabled');
+		}
+		
+	});
+}
+
 $boton = document.getElementById('user-register');
-$boton.addEventListener('click', async (event) => {
-	alert('click');
-	event.preventDefault();
+if ($boton) {
+	handleBotonRegister($boton);	
+}
 
-	const formData = getFormData(['first_name', 'last_name', 'email', 'age', 'password']);
-	
-	const resultado = await doFetch('http://localhost:8080/api/sessions/register', 'post', false, formData);
-	const clase = resultado.success ? 'info' : 'error';
-	setMensajeGlobal(resultado.message, clase);
-	
-});
+/* ================ Login ================= */
 
+const handleBotonLogin = $boton => {
+	$boton.addEventListener('click', async (event) => {
+		event.preventDefault();
+		event.target.setAttribute('disabled', 'disabled');
+
+		const formData = getFormData(['username', 'password']);
+		
+		const resultado = await doFetch('http://localhost:8080/api/sessions/login', 'post', false, formData);
+		
+		if (resultado.success) {
+			setMensajeGlobal('Inicio de sesión exitoso! Redirigiendo al inicio', 'info');
+			setTimeout(() => {
+				window.location.href = '/products';
+			},3000);
+		} else {
+			setMensajeGlobal(resultado.message, 'error');
+			event.target.removeAttribute('disabled');
+		}
+		
+	});
+}
+
+$boton = document.getElementById('login');
+if ($boton) {
+	handleBotonLogin($boton);	
+}
+
+/* ============== Globales ================ */
 const getFormData = campos => {
 	const formData = {};
 	
@@ -23,17 +67,15 @@ const getFormData = campos => {
 }
 
 const doFetch = async (url, method, headers, body) => {
-	method = method || 'get';
+	method  = method || 'get';
 	headers = {'Content-Type': 'application/json'};
-	body = body ? JSON.stringify(body) : {};
-	console.log(body);
-
-	return await fetch(url, {method, headers, body}).then( r => r.json()).then( j => j);
+	body    = body ? JSON.stringify(body) : {};
+	return await fetch(url, {method, headers, body}).then( r => r.json()).then( j => j).catch(err => console.log(err));
 }
 
 const setMensajeGlobal = (mensaje, clase) => {
 	$mensaje = document.getElementById('mensaje');
-	$mensaje.style.visibility = 'visible';
+	
 	//Limpio todas las clases anteriores
 	$mensaje.classList.remove(...$mensaje.classList);
 
@@ -42,7 +84,9 @@ const setMensajeGlobal = (mensaje, clase) => {
 
 	$mensaje.innerHTML = mensaje;
 
+	$mensaje.style.visibility = 'visible';
+
 	setTimeout(() => {
 		$mensaje.style.visibility = 'hidden';		
-	},4000);
+	},3000);
 }

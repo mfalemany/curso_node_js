@@ -3,6 +3,9 @@ const viewsRouter       = express.Router();
 const { productsModel } = require('../dao/models/products.model');
 const { cartsModel }    = require('../dao/models/carts.model');
 
+viewsRouter.get('/', auth, (req, res) => {
+	res.redirect('/products');
+});
 
 viewsRouter.get('/register', (req, res) => {
 	if (!req.session.user) {
